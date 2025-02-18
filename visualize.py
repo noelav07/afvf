@@ -42,7 +42,7 @@ def display_comparison_graph(input_data, output_data):
     st.pyplot(fig)
 
 def main():
-    st.title("Deceptive Product Review Feedback")
+    st.title("Authentic Feedback Validation Framework")
 
     # Specify file paths
     input_csv_path = "dataset/review.csv"
