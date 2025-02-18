@@ -7,14 +7,14 @@ real_reviews.*
 *.so
 
 #Large_Files
-reviews.csv
-train.csv
-dataset/
-.Sentimental-Analysis-using-Logistic-Regression/
+#reviews.csv
+#train.csv
+#dataset/
+#.Sentimental-Analysis-using-Logistic-Regression/
 .vscode/
 real_reviews.csv
-review.csv
-Review Monitoring.ipynb
+#review.csv
+#Review Monitoring.ipynb
 
 
 # Distribution / packaging
