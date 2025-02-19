@@ -14,7 +14,7 @@ def display_input_data(input_data):
     st.subheader("Input Dataset")
     st.write(input_data)
     st.write(f"Number of rows: {num_rows_input}")
-    st.write(f"Number of columns: {num_cols_input}")
+    # st.write(f"Number of columns: {num_cols_input}")
 
 # Function to display output CSV
 def display_output_data(output_data):
@@ -22,16 +22,38 @@ def display_output_data(output_data):
     st.subheader("Output Dataset")
     st.write(output_data)
     st.write(f"Number of rows: {num_rows_output}")
-    st.write(f"Number of columns: {num_cols_output}")
+    # st.write(f"Number of columns: {num_cols_output}")
 
 # Function to display rows present in input CSV but not in output CSV
+# def display_missing_rows(input_data, output_data):
+#     input_not_in_output = input_data[~input_data.isin(output_data)].dropna()
+#     if not input_not_in_output.empty:
+#         st.subheader("Rows Present in Input CSV But Not in Output CSV")
+#         st.write(input_not_in_output)
+#     else:
+#         st.write("All rows from input CSV are present in output CSV.")
+
+
+
+# def display_missing_rows(input_data, output_data):
+#     missing_rows = len(input_data) - len(output_data)  # Just count the missing rows
+
+#     st.subheader("Rows Present in Input CSV But Not in Output CSV")
+#     st.write(input_data[~input_data.index.isin(output_data.index)])  # Show missing rows
+#     st.write(f"Total missing rows: {missing_rows}")  # Show correct missing count
+
 def display_missing_rows(input_data, output_data):
-    input_not_in_output = input_data[~input_data.isin(output_data)].dropna()
-    if not input_not_in_output.empty:
-        st.subheader("Rows Present in Input CSV But Not in Output CSV")
-        st.write(input_not_in_output)
-    else:
-        st.write("All rows from input CSV are present in output CSV.")
+    missing_rows = len(input_data) - len(output_data)  # Correct missing row count
+
+    st.subheader("Rows Present in Input CSV But Not in Output CSV")
+    st.write(input_data[~input_data.index.isin(output_data.index)])  # Show missing rows
+    
+    # Display total counts
+    st.write(f"📌 Total rows in Input Dataset: {len(input_data)}")
+    st.write(f"📌 Total rows in Output Dataset: {len(output_data)}")
+    st.write(f"📌 Total missing rows: {missing_rows}")  # Show correct missing count
+
+
 
 # Function to display a graph or block diagram comparing input and output CSVs
 def display_comparison_graph(input_data, output_data):
